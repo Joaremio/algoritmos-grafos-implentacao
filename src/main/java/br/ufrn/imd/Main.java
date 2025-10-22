@@ -1,9 +1,10 @@
 package br.ufrn.imd;
 
+import br.ufrn.imd.algorithms.bellman_ford.BellmanFord;
 import br.ufrn.imd.algorithms.prim.Prim;
-
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -27,20 +28,16 @@ public class Main {
             System.out.println("Grafo carregado com sucesso:");
             System.out.println(grafo);
 
-
             // 4. CHAMAR OS ALGORITMOS
             System.out.println("\n--- Executando Algoritmo de Prim ---");
 
             Prim prim = new Prim();
-
-            // Pega um vértice inicial (ex: "a")
             Vertice inicioPrim = grafo.getVertice("a");
 
             if (inicioPrim != null) {
                 List<Aresta> mst = prim.executar(grafo, inicioPrim);
                 System.out.println("Arestas da MST:");
                 for (Aresta a : mst) {
-                    // Imprime a aresta no formato que ela foi encontrada
                     System.out.println(a.getOrigem() + " --(" + a.getPeso() + ")--> " + a.getDestino());
                 }
             } else {
@@ -48,6 +45,23 @@ public class Main {
             }
 
             System.out.println("\n--- Executando Algoritmo de Bellman-Ford ---");
+
+            Vertice origemBellmanFord = grafo.getVertice("a");
+            if (origemBellmanFord != null) {
+                try {
+                    Map<Vertice, Double> distancias = BellmanFord.calcular(grafo, origemBellmanFord);
+
+                    System.out.println("\nDistâncias mínimas a partir de " + origemBellmanFord + ":");
+                    for (Vertice v : distancias.keySet()) {
+                        double d = distancias.get(v);
+                        System.out.printf(" - %s: %.2f\n", v.getRotulo(), d);
+                    }
+                } catch (IllegalArgumentException e) {
+                    System.err.println("Erro: " + e.getMessage());
+                }
+            } else {
+                System.out.println("Vértice inicial 'a' não encontrado para Bellman-Ford.");
+            }
 
 
             System.out.println("\n--- Executando Algoritmo de Floyd-Warshall ---");
