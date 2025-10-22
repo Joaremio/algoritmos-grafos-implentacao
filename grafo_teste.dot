@@ -1,0 +1,10 @@
+// Grafo não-direcionado para o Algoritmo de Prim
+graph g {
+    a -- b [weight=4];
+    a -- c [weight=2];
+    b -- c [weight=1];
+    b -- d [weight=5];
+    c -- d [weight=8];
+    c -- e [weight=10];
+    d -- e [weight=2];
+}

@@ -1,0 +1,8 @@
+br\ufrn\imd\Vertice.class
+br\ufrn\imd\algorithms\prim\HeapNode.class
+br\ufrn\imd\Grafo.class
+br\ufrn\imd\Main.class
+br\ufrn\imd\algorithms\prim\HeapBinarioMin.class
+br\ufrn\imd\algorithms\prim\Prim.class
+br\ufrn\imd\Aresta.class
+br\ufrn\imd\LeitorDOT.class
