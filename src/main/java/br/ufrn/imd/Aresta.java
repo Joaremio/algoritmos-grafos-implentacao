@@ -3,7 +3,7 @@ package br.ufrn.imd;
 public class Aresta {
     private final Vertice origem;
     private final Vertice destino;
-    private final double peso; // pode ser 1.0 se não for ponderado
+    private final double peso; 
 
     public Aresta(Vertice origem, Vertice destino, double peso) {
         this.origem = origem;
