@@ -32,17 +32,21 @@ public class LeitorDOT {
 
             node.links().forEach(link -> {
                 String rotuloDestino = link.to().name().value();
-                double peso = 1.0;
+                double peso = 1.0; // Peso padrão quando não especificado
+                boolean pesoExplicito = false;
 
                 Object weightAttr = link.attrs().get("weight");
                 if (weightAttr != null) {
                     try {
                         peso = Double.parseDouble(weightAttr.toString());
+                        pesoExplicito = true;
                     } catch (NumberFormatException e) {
-                        System.err.println("Peso inválido para aresta " + rotuloOrigem + " -> " + rotuloDestino
-                                + ". Usando 1.0");
+                        System.err.println("Aviso: Peso inválido para aresta " + rotuloOrigem + " -> " + rotuloDestino
+                                + ". Usando peso padrão 1.0");
                     }
                 }
+                // Nota: Se pesoExplicito == false, a aresta não tinha atributo weight
+                // e está usando o peso padrão 1.0. Isso é aceitável para todos os algoritmos.
 
                 if (direcionado) {
                     // Grafo direcionado: adiciona apenas uma vez

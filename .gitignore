@@ -1,0 +1,49 @@
+# Maven
+target/
+dependency-reduced-pom.xml
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# NetBeans
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Arquivos do sistema operacional
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Arquivos temporários
+*.log
+*.tmp
+*.swp
+*~
+*.bak
+
+# Arquivos de teste específicos (opcional - descomente se não quiser versionar os grafos de teste)
+# *.dot
+# grafo_*.dot
+

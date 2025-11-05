@@ -1,0 +1,11 @@
+// Grafo direcionado pequeno - Teste Floyd-Warshall
+// Grafo simples com 4 vértices
+digraph g {
+    a -> b [weight=5];
+    a -> c [weight=10];
+    b -> c [weight=3];
+    b -> d [weight=2];
+    c -> d [weight=1];
+    d -> a [weight=4];
+}
+

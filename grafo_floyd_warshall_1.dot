@@ -1,0 +1,14 @@
+// 6 vértices (A a F) com arestas direcionadas e ponderadas
+digraph g {
+    a -> b [weight=3];
+    a -> d [weight=1];
+    b -> c [weight=3];
+    c -> d [weight=4];
+    d -> b [weight=2];
+    d -> e [weight=6];
+    d -> f [weight=2];
+    e -> c [weight=3];
+    f -> a [weight=6];
+    f -> e [weight=5];
+}
+

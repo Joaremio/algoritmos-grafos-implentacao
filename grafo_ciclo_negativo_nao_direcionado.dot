@@ -1,0 +1,9 @@
+// Grafo não-direcionado com ciclo negativo
+graph g {
+    a -- b [weight=1];
+    b -- c [weight=-2];
+    c -- d [weight=3];
+    d -- b [weight=-2];
+    a -- d [weight=4];
+}
+

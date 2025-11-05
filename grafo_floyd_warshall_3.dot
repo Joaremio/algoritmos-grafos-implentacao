@@ -1,0 +1,10 @@
+// Grafo direcionado com ciclo negativo - Teste Bellman-Ford e Floyd-Warshall
+// Ambos os algoritmos devem detectar e reportar o erro
+digraph g {
+    a -> b [weight=1];
+    b -> c [weight=-2];
+    c -> d [weight=3];
+    d -> b [weight=-2];
+    a -> d [weight=4];
+}
+
